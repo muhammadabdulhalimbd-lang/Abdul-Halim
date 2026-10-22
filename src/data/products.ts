@@ -212,8 +212,31 @@ export const SAMPLE_PRODUCTS: Product[] = [
   },
 
   // =========================================================================
-  // তৃতীয় লাইন / অন্যান্য ডিজাইন
+  // তৃতীয় লাইন (Third Line): এক্সক্লুসিভ ড্রপ ও অন্যান্য ডিজাইন
   // =========================================================================
+  {
+    id: 'tz-014',
+    nameBn: 'ফেইথ ইন এভরি থ্রেড ওভারসাইজড টি',
+    nameEn: 'Faith in Every Thread Oversized Tee',
+    category: 'oversized',
+    categoryBn: 'ওভারসাইজড টি-শার্ট',
+    price: 600,
+    originalPrice: 750,
+    isNew: true,
+    isBestSeller: true,
+    image: '/assets/aistudio/Faith_in_Every_Thread_T-Shirt_Mockup_5a6c855a.png',
+    descriptionBn: 'TEEZAN-এর সিগনেচার "Faith in Every Thread" কালেকশন। আধ্যাত্মিক ক্যালিগ্রাফি স্ট্রাইপ এবং দৃষ্টিনন্দন ম্যান্ডালা জ্যামিতিক নকশার অনন্য মেলবন্ধন। ১০০% সফট ব্রিদেবল প্রিমিয়াম কম্বড কটন এবং আধুনিক ড্রপ-শোল্ডার রিল্যাক্সড কাট।',
+    fabricBn: '১০০% সফট ব্রিদেবল প্রিমিয়াম কম্বড কটন',
+    gsm: 235,
+    colors: [
+      { nameBn: 'ডাস্টি ব্লু', nameEn: 'Dusty Slate Blue', hex: '#839FB5' },
+      { nameBn: 'জেট ব্ল্যাক', nameEn: 'Jet Black', hex: '#111111' }
+    ],
+    availableSizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    fitBn: 'ড্রপ-শোল্ডার ওভারসাইজড ফিট',
+    tagBn: 'নতুন ড্রপ 🔥',
+    isSampleData: false
+  },
   {
     id: 'tz-004',
     nameBn: 'মিনিমাল গ্রাফিক টি',

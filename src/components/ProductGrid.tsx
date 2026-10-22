@@ -28,6 +28,9 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
   // Signature selection (Second line: next distinct products, zero duplicates)
   const bestSellers = products.slice(4, 8);
 
+  // Exclusive drops (Third line: Faith in Every Thread & signature releases)
+  const exclusiveDrops = products.slice(8);
+
   // Filtered list when category filter is active or show all
   const filteredProducts = activeFilter === 'all'
     ? (showAllProducts ? products : products)
@@ -179,16 +182,6 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
                 />
               ))}
             </div>
-
-            {/* "সব পণ্য দেখুন" Secondary Centered Button */}
-            <div className="mt-12 text-center">
-              <button
-                onClick={() => setShowAllProducts(true)}
-                className="px-8 py-3.5 bg-transparent border-2 border-[#111111] text-[#111111] font-bengali text-sm font-semibold hover:bg-[#111111] hover:text-[#FFFFFF] transition-all cursor-pointer"
-              >
-                সব পণ্য দেখুন ({products.length}টি কালেকশন)
-              </button>
-            </div>
           </section>
 
           {/* ========================================================================= */}
@@ -224,6 +217,52 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
               ))}
             </div>
           </section>
+
+          {/* ========================================================================= */}
+          {/* SECTION G: EXCLUSIVE DROPS (এক্সক্লুসিভ কালেকশন - ফেইথ ইন এভরি থ্রেড ও অন্যান্য) */}
+          {/* ========================================================================= */}
+          {exclusiveDrops.length > 0 && (
+            <section id="exclusive-drops" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-4 border-b border-[#E2DBD0]">
+                <div className="space-y-1">
+                  <div className="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest text-[#C6A36A] font-english font-semibold">
+                    <Sparkles className="w-3.5 h-3.5 text-[#C6A36A]" />
+                    <span>SPECIAL EDITION DROPS</span>
+                  </div>
+                  <h2 className="font-bengali text-3xl sm:text-4xl font-bold text-[#111111]">
+                    এক্সক্লুসিভ কালেকশন
+                  </h2>
+                  <div className="flex items-center gap-2 pt-0.5 text-xs text-[#666666] font-bengali">
+                    <Info className="w-3.5 h-3.5 text-[#C6A36A]" />
+                    <span>আধ্যাত্মিক ক্যালিগ্রাফি ও প্রিমিয়াম ড্রপ-শোল্ডার বিশেষ এডিশন।</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Exclusive Drop Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                {exclusiveDrops.map((prod) => (
+                  <ProductCard
+                    key={prod.id}
+                    product={prod}
+                    onQuickView={onQuickView}
+                    onAddToCart={onAddToCart}
+                    onOrderNow={onOrderNow}
+                  />
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* "সব পণ্য দেখুন" Centered Bottom Button */}
+          <div className="mt-14 text-center">
+            <button
+              onClick={() => setShowAllProducts(true)}
+              className="px-9 py-3.5 bg-transparent border-2 border-[#111111] text-[#111111] font-bengali text-sm font-semibold hover:bg-[#111111] hover:text-[#FFFFFF] transition-all cursor-pointer shadow-xs"
+            >
+              সব পণ্য দেখুন ({products.length}টি কালেকশন)
+            </button>
+          </div>
         </>
       )}
 
